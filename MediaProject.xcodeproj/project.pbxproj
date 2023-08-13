@@ -7,19 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE76F2A72A862DD2001BFD2D /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */; };
+		DE76F2AA2A8631A5001BFD2D /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */; };
+		DE76F2AB2A8631A5001BFD2D /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */; };
+		DE76F2AD2A864546001BFD2D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE76F2AC2A864546001BFD2D /* .gitignore */; };
+		DE76F2AF2A864561001BFD2D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2AE2A864561001BFD2D /* APIKey.swift */; };
+		DE76F2B12A8645FB001BFD2D /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2B02A8645FB001BFD2D /* TMDBAPIManager.swift */; };
+		DE76F2B32A8646B5001BFD2D /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2B22A8646B5001BFD2D /* URL+Extension.swift */; };
+		DE76F2B52A8648B9001BFD2D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2B42A8648B9001BFD2D /* Endpoint.swift */; };
+		DE76F2B82A864BCB001BFD2D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DE76F2B72A864BCB001BFD2D /* Alamofire */; };
+		DE76F2BB2A864BD6001BFD2D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DE76F2BA2A864BD6001BFD2D /* SwiftyJSON */; };
+		DE76F2BE2A864BDF001BFD2D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DE76F2BD2A864BDF001BFD2D /* Kingfisher */; };
 		DE80D2F52A861C0900CBAEA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80D2F42A861C0900CBAEA5 /* AppDelegate.swift */; };
 		DE80D2F72A861C0900CBAEA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80D2F62A861C0900CBAEA5 /* SceneDelegate.swift */; };
-		DE80D2F92A861C0900CBAEA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80D2F82A861C0900CBAEA5 /* ViewController.swift */; };
+		DE80D2F92A861C0900CBAEA5 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80D2F82A861C0900CBAEA5 /* TrendViewController.swift */; };
 		DE80D2FC2A861C0900CBAEA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE80D2FA2A861C0900CBAEA5 /* Main.storyboard */; };
 		DE80D2FE2A861C0A00CBAEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE80D2FD2A861C0A00CBAEA5 /* Assets.xcassets */; };
 		DE80D3012A861C0A00CBAEA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE80D2FF2A861C0A00CBAEA5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		DE76F2AC2A864546001BFD2D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DE76F2AE2A864561001BFD2D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		DE76F2B02A8645FB001BFD2D /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
+		DE76F2B22A8646B5001BFD2D /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		DE76F2B42A8648B9001BFD2D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DE80D2F12A861C0900CBAEA5 /* MediaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE80D2F42A861C0900CBAEA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE80D2F62A861C0900CBAEA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE80D2F82A861C0900CBAEA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE80D2F82A861C0900CBAEA5 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		DE80D2FB2A861C0900CBAEA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE80D2FD2A861C0A00CBAEA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE80D3002A861C0A00CBAEA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,12 +50,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE76F2BE2A864BDF001BFD2D /* Kingfisher in Frameworks */,
+				DE76F2BB2A864BD6001BFD2D /* SwiftyJSON in Frameworks */,
+				DE76F2B82A864BCB001BFD2D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE118CC42A86554900084A26 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				DE76F2AE2A864561001BFD2D /* APIKey.swift */,
+				DE76F2B02A8645FB001BFD2D /* TMDBAPIManager.swift */,
+				DE76F2B22A8646B5001BFD2D /* URL+Extension.swift */,
+				DE76F2B42A8648B9001BFD2D /* Endpoint.swift */,
+				DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		DE80D2E82A861C0900CBAEA5 = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +92,13 @@
 			children = (
 				DE80D2F42A861C0900CBAEA5 /* AppDelegate.swift */,
 				DE80D2F62A861C0900CBAEA5 /* SceneDelegate.swift */,
-				DE80D2F82A861C0900CBAEA5 /* ViewController.swift */,
 				DE80D2FA2A861C0900CBAEA5 /* Main.storyboard */,
+				DE80D2F82A861C0900CBAEA5 /* TrendViewController.swift */,
+				DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */,
+				DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */,
+				DE118CC42A86554900084A26 /* Module */,
 				DE80D2FD2A861C0A00CBAEA5 /* Assets.xcassets */,
+				DE76F2AC2A864546001BFD2D /* .gitignore */,
 				DE80D2FF2A861C0A00CBAEA5 /* LaunchScreen.storyboard */,
 				DE80D3022A861C0A00CBAEA5 /* Info.plist */,
 			);
@@ -83,6 +121,11 @@
 			dependencies = (
 			);
 			name = MediaProject;
+			packageProductDependencies = (
+				DE76F2B72A864BCB001BFD2D /* Alamofire */,
+				DE76F2BA2A864BD6001BFD2D /* SwiftyJSON */,
+				DE76F2BD2A864BDF001BFD2D /* Kingfisher */,
+			);
 			productName = MediaProject;
 			productReference = DE80D2F12A861C0900CBAEA5 /* MediaProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +154,11 @@
 				Base,
 			);
 			mainGroup = DE80D2E82A861C0900CBAEA5;
+			packageReferences = (
+				DE76F2B62A864BCB001BFD2D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DE76F2B92A864BD6001BFD2D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				DE76F2BC2A864BDF001BFD2D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = DE80D2F22A861C0900CBAEA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +173,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE76F2AD2A864546001BFD2D /* .gitignore in Resources */,
 				DE80D3012A861C0A00CBAEA5 /* LaunchScreen.storyboard in Resources */,
 				DE80D2FE2A861C0A00CBAEA5 /* Assets.xcassets in Resources */,
 				DE80D2FC2A861C0900CBAEA5 /* Main.storyboard in Resources */,
+				DE76F2AB2A8631A5001BFD2D /* ContentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE80D2F92A861C0900CBAEA5 /* ViewController.swift in Sources */,
+				DE80D2F92A861C0900CBAEA5 /* TrendViewController.swift in Sources */,
+				DE76F2B52A8648B9001BFD2D /* Endpoint.swift in Sources */,
+				DE76F2B32A8646B5001BFD2D /* URL+Extension.swift in Sources */,
+				DE76F2A72A862DD2001BFD2D /* ReusableViewProtocol.swift in Sources */,
 				DE80D2F52A861C0900CBAEA5 /* AppDelegate.swift in Sources */,
 				DE80D2F72A861C0900CBAEA5 /* SceneDelegate.swift in Sources */,
+				DE76F2AF2A864561001BFD2D /* APIKey.swift in Sources */,
+				DE76F2B12A8645FB001BFD2D /* TMDBAPIManager.swift in Sources */,
+				DE76F2AA2A8631A5001BFD2D /* ContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +350,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,9 +358,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,6 +381,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,9 +389,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.MediaProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -356,6 +420,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE76F2B62A864BCB001BFD2D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		DE76F2B92A864BD6001BFD2D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		DE76F2BC2A864BDF001BFD2D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE76F2B72A864BCB001BFD2D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE76F2B62A864BCB001BFD2D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DE76F2BA2A864BD6001BFD2D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE76F2B92A864BD6001BFD2D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		DE76F2BD2A864BDF001BFD2D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE76F2BC2A864BDF001BFD2D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE80D2E92A861C0900CBAEA5 /* Project object */;
 }
