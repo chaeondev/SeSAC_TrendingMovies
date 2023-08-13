@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE118CC62A89266A00084A26 /* MovieStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE118CC52A89266A00084A26 /* MovieStruct.swift */; };
 		DE76F2A72A862DD2001BFD2D /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */; };
 		DE76F2AA2A8631A5001BFD2D /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */; };
 		DE76F2AB2A8631A5001BFD2D /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE118CC52A89266A00084A26 /* MovieStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStruct.swift; sourceTree = "<group>"; };
 		DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				DE80D2F62A861C0900CBAEA5 /* SceneDelegate.swift */,
 				DE80D2FA2A861C0900CBAEA5 /* Main.storyboard */,
 				DE80D2F82A861C0900CBAEA5 /* TrendViewController.swift */,
+				DE118CC52A89266A00084A26 /* MovieStruct.swift */,
 				DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */,
 				DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */,
 				DE118CC42A86554900084A26 /* Module */,
@@ -191,6 +194,7 @@
 				DE80D2F92A861C0900CBAEA5 /* TrendViewController.swift in Sources */,
 				DE76F2B52A8648B9001BFD2D /* Endpoint.swift in Sources */,
 				DE76F2B32A8646B5001BFD2D /* URL+Extension.swift in Sources */,
+				DE118CC62A89266A00084A26 /* MovieStruct.swift in Sources */,
 				DE76F2A72A862DD2001BFD2D /* ReusableViewProtocol.swift in Sources */,
 				DE80D2F52A861C0900CBAEA5 /* AppDelegate.swift in Sources */,
 				DE80D2F72A861C0900CBAEA5 /* SceneDelegate.swift in Sources */,

@@ -36,6 +36,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFp-FE-4RH">
+                        <rect key="frame" x="8" y="58.333333333333343" width="332" height="332"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tFp-FE-4RH" secondAttribute="height" multiplier="1:1" id="sJ8-o8-ZBv"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEP-JH-OFk">
                         <rect key="frame" x="8" y="58.333333333333343" width="332" height="332"/>
                         <subviews>
@@ -83,17 +90,29 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="rse-5S-7mT" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.04" id="03g-1S-hQ4"/>
+                    <constraint firstAttribute="trailing" secondItem="tFp-FE-4RH" secondAttribute="trailing" constant="8" id="8iR-E0-7Bb"/>
                     <constraint firstItem="DEP-JH-OFk" firstAttribute="top" secondItem="zgL-Vc-Cus" secondAttribute="bottom" constant="8" id="8tW-hi-7Xp"/>
+                    <constraint firstItem="tFp-FE-4RH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="GE3-kn-62e"/>
                     <constraint firstItem="rse-5S-7mT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Gzd-Qz-Ukj"/>
                     <constraint firstItem="zgL-Vc-Cus" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.05" id="RPj-7Q-9kw"/>
                     <constraint firstAttribute="trailing" secondItem="DEP-JH-OFk" secondAttribute="trailing" constant="8" id="SPq-sk-tLG"/>
                     <constraint firstItem="rse-5S-7mT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jvs-pS-okK"/>
+                    <constraint firstItem="tFp-FE-4RH" firstAttribute="top" secondItem="zgL-Vc-Cus" secondAttribute="bottom" constant="8" id="mBq-h7-OAi"/>
                     <constraint firstItem="zgL-Vc-Cus" firstAttribute="top" secondItem="rse-5S-7mT" secondAttribute="bottom" constant="6" id="sWe-Jp-FEp"/>
                     <constraint firstItem="DEP-JH-OFk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vrH-2N-XPb"/>
                     <constraint firstItem="zgL-Vc-Cus" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xjJ-gc-0Of"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="DEP-JH-OFk" id="Ok4-2L-ulE"/>
+                <outlet property="backdropImageView" destination="0mh-q7-zkG" id="A8I-qO-5vs"/>
+                <outlet property="dateLabel" destination="rse-5S-7mT" id="ja4-hK-5e1"/>
+                <outlet property="genreLabel" destination="zgL-Vc-Cus" id="kLI-7H-3Xu"/>
+                <outlet property="shadowView" destination="tFp-FE-4RH" id="dsZ-Oo-9eO"/>
+                <outlet property="storyLabel" destination="JCX-fG-Fri" id="A6S-Xd-p6n"/>
+                <outlet property="titleLabel" destination="b7L-hd-1LD" id="oY4-MJ-lP6"/>
+            </connections>
             <point key="canvasLocation" x="102.29007633587786" y="19.014084507042256"/>
         </tableViewCell>
     </objects>
