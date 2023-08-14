@@ -51,7 +51,7 @@ class TrendViewController: UIViewController {
                 let backdrop = item["backdrop_path"].stringValue
                 let overview = item["overview"].stringValue
 
-                var data = Movie(id: id, title: title, releaseDate: date, genre: genres, poster: poster, backdrop: backdrop, overview: overview)
+                let data = Movie(id: id, title: title, releaseDate: date, genre: genres, poster: poster, backdrop: backdrop, overview: overview)
                 self.movieList.append(data)
 
             }
@@ -86,5 +86,13 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        transitionView()
+    }
     
+    func transitionView() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
