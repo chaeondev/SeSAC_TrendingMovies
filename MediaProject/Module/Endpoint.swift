@@ -18,8 +18,8 @@ enum time_window: String {
 
 struct RequestURL {
     var type: Endpoint
-    var time: time_window
-    var movie_id: Int
+    var time: time_window = .day
+    var movie_id: Int = 0
     
     var requestURL: String {
         switch type {

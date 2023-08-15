@@ -87,12 +87,13 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        transitionView()
+        transitionView(rowIndex: indexPath.row)
     }
     
-    func transitionView() {
+    func transitionView(rowIndex: Int) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
+        vc.movieInfo = movieList[rowIndex]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

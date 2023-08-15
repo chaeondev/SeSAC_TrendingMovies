@@ -81,6 +81,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="29B-h2-6gB">
                                 <rect key="frame" x="0.0" y="59" width="393" height="213"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xj-ay-xZu">
+                                <rect key="frame" x="0.0" y="59" width="393" height="213"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-9u-zSD">
                                 <rect key="frame" x="19.999999999999993" y="134.33333333333337" width="98.333333333333314" height="137.66666666666663"/>
                                 <constraints>
@@ -121,17 +125,22 @@
                             <constraint firstItem="vdM-Qs-1k7" firstAttribute="trailing" secondItem="29B-h2-6gB" secondAttribute="trailing" id="R8W-J0-Dr1"/>
                             <constraint firstItem="vdM-Qs-1k7" firstAttribute="bottom" secondItem="cAa-iy-MOz" secondAttribute="bottom" id="ReJ-Sc-OWl"/>
                             <constraint firstItem="29B-h2-6gB" firstAttribute="top" secondItem="vdM-Qs-1k7" secondAttribute="top" id="Uwt-Fi-VWq"/>
+                            <constraint firstItem="cAa-iy-MOz" firstAttribute="top" secondItem="6xj-ay-xZu" secondAttribute="bottom" id="WEa-fa-ROf"/>
                             <constraint firstItem="29B-h2-6gB" firstAttribute="height" secondItem="Ljw-gT-4kW" secondAttribute="height" multiplier="0.25" id="cKb-Ki-FlW"/>
                             <constraint firstItem="8KZ-Mo-nUc" firstAttribute="height" relation="greaterThanOrEqual" secondItem="29B-h2-6gB" secondAttribute="height" multiplier="0.16" id="ehe-s5-Rsd"/>
                             <constraint firstItem="cAa-iy-MOz" firstAttribute="leading" secondItem="vdM-Qs-1k7" secondAttribute="leading" id="n2b-gm-SEU"/>
+                            <constraint firstItem="6xj-ay-xZu" firstAttribute="leading" secondItem="vdM-Qs-1k7" secondAttribute="leading" id="nog-wM-AbI"/>
                             <constraint firstItem="Xb5-9u-zSD" firstAttribute="width" secondItem="29B-h2-6gB" secondAttribute="width" multiplier="0.25" id="pTG-6e-82i"/>
+                            <constraint firstItem="6xj-ay-xZu" firstAttribute="top" secondItem="vdM-Qs-1k7" secondAttribute="top" id="qsZ-Hq-aRh"/>
                             <constraint firstItem="8KZ-Mo-nUc" firstAttribute="leading" secondItem="vdM-Qs-1k7" secondAttribute="leading" constant="20" id="rdn-SL-4Cq"/>
                             <constraint firstItem="Xb5-9u-zSD" firstAttribute="bottom" secondItem="29B-h2-6gB" secondAttribute="bottom" id="sMf-xN-cGo"/>
                             <constraint firstItem="vdM-Qs-1k7" firstAttribute="trailing" secondItem="cAa-iy-MOz" secondAttribute="trailing" id="ukw-A1-vU0"/>
+                            <constraint firstItem="6xj-ay-xZu" firstAttribute="trailing" secondItem="vdM-Qs-1k7" secondAttribute="trailing" id="xJu-Ej-xAt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backDropImageView" destination="29B-h2-6gB" id="yW5-sp-35j"/>
+                        <outlet property="blackView" destination="6xj-ay-xZu" id="Tjt-ZT-fow"/>
                         <outlet property="movieTitleLabel" destination="8KZ-Mo-nUc" id="LmO-8y-uck"/>
                         <outlet property="posterImageView" destination="Xb5-9u-zSD" id="3Rh-Tv-9n3"/>
                         <outlet property="tableView" destination="cAa-iy-MOz" id="6c4-aH-een"/>

@@ -25,6 +25,7 @@
 		DE80D2FC2A861C0900CBAEA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE80D2FA2A861C0900CBAEA5 /* Main.storyboard */; };
 		DE80D2FE2A861C0A00CBAEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE80D2FD2A861C0A00CBAEA5 /* Assets.xcassets */; };
 		DE80D3012A861C0A00CBAEA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE80D2FF2A861C0A00CBAEA5 /* LaunchScreen.storyboard */; };
+		DECCE0F32A8BD3E300B38945 /* PersonCreditStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCE0F22A8BD3E300B38945 /* PersonCreditStruct.swift */; };
 		DEEF57EE2A8A37A800FD4FAA /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF57ED2A8A37A800FD4FAA /* CreditViewController.swift */; };
 		DEEF57F12A8A3D2200FD4FAA /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF57EF2A8A3D2200FD4FAA /* CastTableViewCell.swift */; };
 		DEEF57F22A8A3D2200FD4FAA /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEEF57F02A8A3D2200FD4FAA /* CastTableViewCell.xib */; };
@@ -51,6 +52,7 @@
 		DE80D2FD2A861C0A00CBAEA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE80D3002A861C0A00CBAEA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE80D3022A861C0A00CBAEA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DECCE0F22A8BD3E300B38945 /* PersonCreditStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCreditStruct.swift; sourceTree = "<group>"; };
 		DEEF57ED2A8A37A800FD4FAA /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		DEEF57EF2A8A3D2200FD4FAA /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		DEEF57F02A8A3D2200FD4FAA /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				DEEF57ED2A8A37A800FD4FAA /* CreditViewController.swift */,
 				DE80D2F82A861C0900CBAEA5 /* TrendViewController.swift */,
 				DE118CC52A89266A00084A26 /* MovieStruct.swift */,
+				DECCE0F22A8BD3E300B38945 /* PersonCreditStruct.swift */,
 				DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */,
 				DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */,
 				DE118CC42A86554900084A26 /* Module */,
@@ -225,6 +228,7 @@
 				DE76F2B12A8645FB001BFD2D /* TMDBAPIManager.swift in Sources */,
 				DE76F2AA2A8631A5001BFD2D /* ContentTableViewCell.swift in Sources */,
 				DEEF57EE2A8A37A800FD4FAA /* CreditViewController.swift in Sources */,
+				DECCE0F32A8BD3E300B38945 /* PersonCreditStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

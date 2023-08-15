@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 
 
@@ -16,10 +17,12 @@ class CreditViewController: UIViewController {
     @IBOutlet var movieTitleLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var backDropImageView: UIImageView!
+    @IBOutlet var blackView: UIView!
     
-    var castList: [String] = []
-    let movieid: Int = 0
-    var result: Credit?
+    
+    var castList: [PersonCredit] = []
+    var movieInfo: Movie?
+    var expand: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,10 @@ class CreditViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
+        
+        configureView()
         callRequest()
+        
     }
     
     func callRequest() {
@@ -41,11 +47,37 @@ class CreditViewController: UIViewController {
             "Authorization" : APIKey.tmdbKey,
             "accept" : "application/json"
         ]
-        let url = "https://api.themoviedb.org/3/movie/569094/credits?language=en-US"
+        let url = RequestURL(type: .credit, movie_id: movieInfo!.id).requestURL
         AF.request(url, method: .get, headers: header).validate().responseDecodable(of: Credit.self ) { response in
             guard let value = response.value else { return }
-            print(value.cast)
+            for person in value.cast {
+                let realName = person.name
+                guard let castName = person.character,
+                      let profilePath = person.profilePath else { return }
+                let data = PersonCredit(realName: realName, castName: castName, profilePath: profilePath)
+                self.castList.append(data)
+            }
         }
+    }
+    
+    func configureView() {
+        guard let movieInfo else { return }
+        
+        movieTitleLabel.text = movieInfo.title
+        movieTitleLabel.font = .boldSystemFont(ofSize: 18)
+        movieTitleLabel.textColor = .white
+        
+        if let posterUrl = URL(string: "https://image.tmdb.org/t/p/original" + movieInfo.poster) {
+            posterImageView.kf.setImage(with: posterUrl)
+        }
+        
+        if let backUrl = URL(string: "https://image.tmdb.org/t/p/original" + movieInfo.backdrop) {
+            backDropImageView.kf.setImage(with: backUrl)
+        }
+        backDropImageView.contentMode = .scaleAspectFill
+        
+        blackView.backgroundColor = .black.withAlphaComponent(0.6)
+        
     }
 
 }
@@ -55,6 +87,18 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Overview" : "Cast"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return UITableView.automaticDimension
+        }
+        else {
+            return 50
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? 1 : castList.count
@@ -63,13 +107,18 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as? OverviewTableViewCell else { return UITableViewCell()}
+            cell.overviewLabel.text = movieInfo?.overview
+            
+            
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else { return UITableViewCell()}
             return cell
         }
+        
     
     }
+
     
     
 }
