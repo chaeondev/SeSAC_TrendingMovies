@@ -10,6 +10,7 @@ import UIKit
 class OverviewTableViewCell: UITableViewCell {
 
     var expand: Bool = false
+    var myDelegate : DownBtnClicked?
     
     
     @IBOutlet var overviewLabel: UILabel!
@@ -21,21 +22,25 @@ class OverviewTableViewCell: UITableViewCell {
         
         overviewLabel.numberOfLines = 2
         overviewLabel.font = .systemFont(ofSize: 12)
-        downButton.addTarget(self, action: #selector(downButtonClicked), for: .touchUpInside)
-        
+        downButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
     }
 
     @IBAction func downButtonClicked(_ sender: UIButton) {
+        expand.toggle()
         if !expand {
             overviewLabel.numberOfLines = 2
             downButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-            expand = true
         } else {
             overviewLabel.numberOfLines = 0
             downButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
-            expand = false
         }
+        myDelegate?.onDownBtnClicked()
     }
     
     
+    
+}
+
+protocol DownBtnClicked {
+     func onDownBtnClicked()
 }

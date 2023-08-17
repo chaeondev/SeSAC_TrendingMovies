@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbK-7d-Au5">
-                        <rect key="frame" x="175.33333333333334" y="42" width="100.00000000000003" height="44.333333333333343"/>
+                        <rect key="frame" x="175.33333333333334" y="20.000000000000004" width="100.00000000000003" height="44.333333333333343"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="yVj-at-Itw"/>
                         </constraints>
@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fad-qB-CUo">
-                        <rect key="frame" x="175.33333333333334" y="106.33333333333333" width="100.00000000000003" height="26.333333333333329"/>
+                        <rect key="frame" x="175.33333333333334" y="76.333333333333329" width="100.00000000000003" height="26.333333333333329"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="LEb-Hi-qMs"/>
                         </constraints>
@@ -43,12 +43,12 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MbK-7d-Au5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="42" id="27Q-PE-ITk"/>
+                    <constraint firstItem="MbK-7d-Au5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="27Q-PE-ITk"/>
                     <constraint firstItem="Osx-WP-XJz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="C2W-VK-Bhk"/>
                     <constraint firstItem="Osx-WP-XJz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ifd-hO-OUJ"/>
                     <constraint firstAttribute="bottom" secondItem="Osx-WP-XJz" secondAttribute="bottom" constant="12" id="J2E-w1-iD6"/>
                     <constraint firstItem="MbK-7d-Au5" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.2" id="eSM-pP-Rvw"/>
-                    <constraint firstItem="Fad-qB-CUo" firstAttribute="top" secondItem="MbK-7d-Au5" secondAttribute="bottom" constant="20" id="ebJ-1P-2ww"/>
+                    <constraint firstItem="Fad-qB-CUo" firstAttribute="top" secondItem="MbK-7d-Au5" secondAttribute="bottom" constant="12" id="ebJ-1P-2ww"/>
                     <constraint firstItem="Fad-qB-CUo" firstAttribute="leading" secondItem="Osx-WP-XJz" secondAttribute="trailing" constant="32" id="kNB-v9-adq"/>
                     <constraint firstItem="Fad-qB-CUo" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.12" id="rMv-wk-rZ3"/>
                     <constraint firstItem="MbK-7d-Au5" firstAttribute="leading" secondItem="Osx-WP-XJz" secondAttribute="trailing" constant="32" id="rxI-XL-UHW"/>

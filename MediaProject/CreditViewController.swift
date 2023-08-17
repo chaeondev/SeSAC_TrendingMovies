@@ -11,7 +11,9 @@ import Kingfisher
 
 
 
-class CreditViewController: UIViewController {
+class CreditViewController: UIViewController, DownBtnClicked {
+    
+    
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var movieTitleLabel: UILabel!
@@ -56,6 +58,7 @@ class CreditViewController: UIViewController {
                       let profilePath = person.profilePath else { return }
                 let data = PersonCredit(realName: realName, castName: castName, profilePath: profilePath)
                 self.castList.append(data)
+                self.tableView.reloadData()
             }
         }
     }
@@ -96,7 +99,7 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableView.automaticDimension
         }
         else {
-            return 50
+            return 100
         }
     }
     
@@ -108,17 +111,22 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as? OverviewTableViewCell else { return UITableViewCell()}
             cell.overviewLabel.text = movieInfo?.overview
-            
+            cell.myDelegate = self
             
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else { return UITableViewCell()}
+            cell.realNameLabel.text = castList[indexPath.row].realName
+            cell.roleNameLabel.text = castList[indexPath.row].castName
+            cell.personImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + castList[indexPath.row].profilePath))
             return cell
         }
         
     
     }
-
     
+    func onDownBtnClicked() {
+        tableView.reloadData()
+    }
     
 }

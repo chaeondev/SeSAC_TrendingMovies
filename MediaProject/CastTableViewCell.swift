@@ -9,12 +9,18 @@ import UIKit
 
 class CastTableViewCell: UITableViewCell {
 
+    
+
     @IBOutlet var personImageView: UIImageView!
     @IBOutlet var realNameLabel: UILabel!
     @IBOutlet var roleNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        realNameLabel.font = .boldSystemFont(ofSize: 15)
+        roleNameLabel.font = .systemFont(ofSize: 14)
+        roleNameLabel.textColor = .gray
         // Initialization code
     }
 
@@ -23,5 +29,6 @@ class CastTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
 }
