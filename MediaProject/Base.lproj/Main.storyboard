@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pvp-RI-75G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IBe-bB-gBD">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -21,20 +21,32 @@
                                 <rect key="frame" x="0.0" y="103.00000000000001" width="393" height="59.666666666666671"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-yG-Ggx">
-                                        <rect key="frame" x="284.33333333333331" y="8" width="100.66666666666669" height="43.666666666666664"/>
+                                        <rect key="frame" x="280.33333333333331" y="8" width="100.66666666666669" height="43.666666666666664"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down.circle" catalog="system" title="Button"/>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u7Q-gc-qrq">
+                                        <rect key="frame" x="12" y="14.333333333333329" width="111" height="32"/>
+                                        <segments>
+                                            <segment title="Movie"/>
+                                            <segment title="TV"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="9LY-dg-flC"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="u7Q-gc-qrq" firstAttribute="centerY" secondItem="oVg-Gp-gOs" secondAttribute="centerY" id="5kb-Q2-NRn"/>
+                                    <constraint firstItem="u7Q-gc-qrq" firstAttribute="leading" secondItem="oVg-Gp-gOs" secondAttribute="leading" constant="12" id="CVk-6g-oq5"/>
                                     <constraint firstItem="4k0-yG-Ggx" firstAttribute="top" secondItem="oVg-Gp-gOs" secondAttribute="top" constant="8" id="K4w-nR-e8m"/>
-                                    <constraint firstAttribute="trailing" secondItem="4k0-yG-Ggx" secondAttribute="trailing" constant="8" id="YhK-OR-Xal"/>
+                                    <constraint firstAttribute="trailing" secondItem="4k0-yG-Ggx" secondAttribute="trailing" constant="12" id="YhK-OR-Xal"/>
                                     <constraint firstAttribute="bottom" secondItem="4k0-yG-Ggx" secondAttribute="bottom" constant="8" id="fzB-eD-uLK"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XPm-z3-UtH">
-                                <rect key="frame" x="0.0" y="162.66666666666669" width="393" height="655.33333333333326"/>
+                                <rect key="frame" x="0.0" y="162.66666666666669" width="393" height="606.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentTableViewCell" id="dty-SX-myX">
@@ -63,12 +75,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="gf5-5d-KvU"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="u7Q-gc-qrq" id="pTM-E5-oPd"/>
                         <outlet property="trendTableView" destination="XPm-z3-UtH" id="mjT-Ro-cXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.3969465648854" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="1935.1145038167938" y="-34.507042253521128"/>
         </scene>
         <!--Credit View Controller-->
         <scene sceneID="MfJ-Bz-Wds">
@@ -148,12 +161,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jA-Hh-pcU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956.4885496183206" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="2883.2061068702287" y="-35.211267605633807"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="jhf-nR-NCT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pvp-RI-75G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zht-26-ztV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tt5-gc-EM5">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -165,6 +179,24 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08n-Kc-V1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.3969465648854" y="-34.507042253521128"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4pz-lF-qo2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IBe-bB-gBD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="26M-Wh-QF4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Pvp-RI-75G" kind="relationship" relationship="viewControllers" id="LV6-ef-Cx2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZUR-57-PV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="81.679389312977094" y="-34.507042253521128"/>
         </scene>
