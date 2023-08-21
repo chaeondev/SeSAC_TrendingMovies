@@ -73,5 +73,31 @@ class TMDBAPIManager {
                 }
             }
     }
+    
+    func callSeasonInfoRequest(seriesID: Int, completionHandler: @escaping (TVDetails) -> () ) {
+        let url = "https://api.themoviedb.org/3/tv/\(seriesID)"
+        AF.request(url, headers: header).validate()
+            .responseDecodable(of: TVDetails.self) { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(value)
+                case .failure(let error):
+                    print("===Season===", error)
+                }
+            }
+    }
+    
+    func callEpisodeInfoRequest(seriesID: Int, seasonNumber: Int, completionHandler: @escaping (TVSeasonsDetails) -> () ) {
+        let url = "https://api.themoviedb.org/3/tv/\(seriesID)/season/\(seasonNumber)"
+        AF.request(url, headers: header).validate()
+            .responseDecodable(of: TVSeasonsDetails.self) { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(value)
+                case .failure(let error):
+                    print("===Episode===", error)
+                }
+            }
+    }
 }
 
