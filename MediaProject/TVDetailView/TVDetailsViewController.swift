@@ -15,6 +15,8 @@ class TVDetailsViewController: UIViewController {
 
     @IBOutlet var episodeCollectionView: UICollectionView!
     
+    let group = DispatchGroup()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,13 +28,18 @@ class TVDetailsViewController: UIViewController {
             self.episodeCollectionView.reloadData()
 
             for season in self.seasonInfo {
-
+                
+                self.group.enter()
                 TMDBAPIManager.shared.callEpisodeInfoRequest(seriesID: self.seriesID, seasonNumber: season.seasonNumber) { data in
                     self.epiInfo.append(data)
-                    self.episodeCollectionView.reloadData()
+                    self.group.leave()
                 }
-
             }
+            self.group.notify(queue: .main) {
+                print("=====END====")
+                self.episodeCollectionView.reloadData()
+            }
+            
         }
         
     }
@@ -50,7 +57,7 @@ extension TVDetailsViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+
         if epiInfo.count > 0 {
             return epiInfo[section].episodes.count
         } else {
@@ -61,7 +68,14 @@ extension TVDetailsViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCollectionViewCell.identifier, for: indexPath) as? EpisodeCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .lightGray
+
+        guard let epiURL = epiInfo[indexPath.section].episodes[indexPath.row].stillPath else { return UICollectionViewCell()}
+        let url = URL(string: "https://image.tmdb.org/t/p/original" + epiURL)
+        cell.epiPosterImageView.kf.setImage(with: url)
+        
+        let epiNum = epiInfo[indexPath.section].episodes[indexPath.row].episodeNumber
+        let epiName = epiInfo[indexPath.section].episodes[indexPath.row].name
+        cell.epiTitleLabel.text = "\(epiNum) \(epiName)"
         
         return cell
     }
@@ -70,6 +84,11 @@ extension TVDetailsViewController: UICollectionViewDelegate, UICollectionViewDat
         if kind == UICollectionView.elementKindSectionHeader {
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSeasonCollectionReusableView.identifier, for: indexPath) as? HeaderSeasonCollectionReusableView else { return UICollectionReusableView() }
             
+            let seasonURL = seasonInfo[indexPath.section].posterPath
+            let url = URL(string: "https://image.tmdb.org/t/p/original" + seasonURL)
+            view.seasonBackDropImageView.kf.setImage(with: url)
+            view.seasonTitleLabel.text = seasonInfo[indexPath.section].name
+            view.seasonOverviewLabel.text = seasonInfo[indexPath.section].overview
             
             return view
         } else {
@@ -92,6 +111,19 @@ extension TVDetailsViewController {
     }
     
     func configureCollectionViewLayout() {
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        let spacing: CGFloat = 12
+        let width = UIScreen.main.bounds.width - (spacing * 4)
+        layout.itemSize = CGSize(width: width / 3, height: width / 3)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        layout.scrollDirection = .vertical
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
+        
+        episodeCollectionView.collectionViewLayout = layout
         
     }
 }

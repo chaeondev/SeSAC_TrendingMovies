@@ -15,14 +15,19 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-nz-wSs">
-                    <rect key="frame" x="0.0" y="0.0" width="438" height="168"/>
+                    <rect key="frame" x="12.000000000000007" y="12" width="118.66666666666669" height="178"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Nk8-nz-wSs" secondAttribute="height" multiplier="1:1.5" id="Fmy-dY-2hO"/>
+                    </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJj-EF-Kb4">
-                    <rect key="frame" x="0.0" y="0.0" width="438" height="168"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.3233909354304636" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5em-Pe-ZUh">
-                    <rect key="frame" x="16" y="16" width="394.33333333333331" height="20"/>
+                    <rect key="frame" x="146.66666666666666" y="12" width="41.333333333333343" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xek-wY-hEA">
+                    <rect key="frame" x="146.66666666666666" y="44" width="275.33333333333337" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -30,18 +35,22 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <constraints>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="iJj-EF-Kb4" secondAttribute="trailing" id="1BI-sv-ydg"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="Nk8-nz-wSs" secondAttribute="bottom" id="CzL-TW-n75"/>
-                <constraint firstItem="5em-Pe-ZUh" firstAttribute="width" secondItem="Nk8-nz-wSs" secondAttribute="width" multiplier="0.9" id="DXH-Md-zqa"/>
-                <constraint firstItem="iJj-EF-Kb4" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="GTY-LC-89v"/>
-                <constraint firstItem="5em-Pe-ZUh" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="16" id="KL8-pT-qR2"/>
-                <constraint firstItem="Nk8-nz-wSs" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="OIL-X9-jeV"/>
-                <constraint firstItem="Nk8-nz-wSs" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="SO7-uQ-ZQq"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="iJj-EF-Kb4" secondAttribute="bottom" id="Zzi-ua-zLN"/>
-                <constraint firstItem="iJj-EF-Kb4" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="mnK-Lv-U5C"/>
-                <constraint firstItem="Nk8-nz-wSs" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="r9m-4s-fnL"/>
-                <constraint firstItem="5em-Pe-ZUh" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="16" id="ya7-p5-pde"/>
+                <constraint firstItem="5em-Pe-ZUh" firstAttribute="leading" secondItem="Nk8-nz-wSs" secondAttribute="trailing" constant="16" id="6oL-p7-HXl"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Xek-wY-hEA" secondAttribute="bottom" constant="12" id="7AM-ig-5kw"/>
+                <constraint firstItem="Xek-wY-hEA" firstAttribute="leading" secondItem="Nk8-nz-wSs" secondAttribute="trailing" constant="16" id="AE4-hG-DHa"/>
+                <constraint firstAttribute="bottom" secondItem="Nk8-nz-wSs" secondAttribute="bottom" constant="12" id="Ica-JA-Mgh"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="Xek-wY-hEA" secondAttribute="trailing" constant="16" id="Mhe-J1-ytH"/>
+                <constraint firstItem="5em-Pe-ZUh" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="12" id="O0b-ca-Qag"/>
+                <constraint firstItem="Nk8-nz-wSs" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="12" id="UnX-vG-qZg"/>
+                <constraint firstItem="Nk8-nz-wSs" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="12" id="WN5-wy-zIw"/>
+                <constraint firstItem="Xek-wY-hEA" firstAttribute="top" secondItem="5em-Pe-ZUh" secondAttribute="bottom" constant="12" id="Xrm-ol-z30"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5em-Pe-ZUh" secondAttribute="trailing" constant="16" id="gtR-AV-LYP"/>
             </constraints>
+            <connections>
+                <outlet property="seasonBackDropImageView" destination="Nk8-nz-wSs" id="xyd-2q-j1e"/>
+                <outlet property="seasonOverviewLabel" destination="Xek-wY-hEA" id="beB-3y-7vC"/>
+                <outlet property="seasonTitleLabel" destination="5em-Pe-ZUh" id="e6F-uD-DLS"/>
+            </connections>
             <point key="canvasLocation" x="219.84732824427479" y="42.253521126760567"/>
         </collectionReusableView>
     </objects>

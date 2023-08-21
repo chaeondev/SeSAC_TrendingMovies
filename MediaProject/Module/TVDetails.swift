@@ -18,8 +18,8 @@ struct TVDetails: Codable {
     let id: Int
     let inProduction: Bool
     let languages: [String]
-    let lastAirDate: String
-    let lastEpisodeToAir: LastEpisodeToAir
+    let lastAirDate: String?
+    let lastEpisodeToAir: LastEpisodeToAir?
     let name: String
     let networks: [Network]
     let numberOfEpisodes, numberOfSeasons: Int
