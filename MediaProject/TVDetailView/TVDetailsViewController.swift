@@ -67,21 +67,32 @@ extension TVDetailsViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCollectionViewCell.identifier, for: indexPath) as? EpisodeCollectionViewCell else { return UICollectionViewCell() }
+        if epiInfo.count > 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCollectionViewCell.identifier, for: indexPath) as? EpisodeCollectionViewCell else { return UICollectionViewCell() }
 
-        guard let epiURL = epiInfo[indexPath.section].episodes[indexPath.row].stillPath else { return UICollectionViewCell()}
-        let url = URL(string: "https://image.tmdb.org/t/p/original" + epiURL)
-        cell.epiPosterImageView.kf.setImage(with: url)
+            if let epiURL = epiInfo[indexPath.section].episodes[indexPath.row].stillPath {
+                let url = URL(string: "https://image.tmdb.org/t/p/original" + epiURL)
+                cell.epiPosterImageView.kf.setImage(with: url)
+            } else {
+                cell.epiPosterImageView.backgroundColor = .black
+            }
+            
+            
+            let epiNum = epiInfo[indexPath.section].episodes[indexPath.row].episodeNumber
+            let epiName = epiInfo[indexPath.section].episodes[indexPath.row].name
+            cell.epiTitleLabel.text = "\(epiNum) \(epiName)"
+            
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
         
-        let epiNum = epiInfo[indexPath.section].episodes[indexPath.row].episodeNumber
-        let epiName = epiInfo[indexPath.section].episodes[indexPath.row].name
-        cell.epiTitleLabel.text = "\(epiNum) \(epiName)"
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         if kind == UICollectionView.elementKindSectionHeader {
+            
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSeasonCollectionReusableView.identifier, for: indexPath) as? HeaderSeasonCollectionReusableView else { return UICollectionReusableView() }
             
             let seasonURL = seasonInfo[indexPath.section].posterPath
