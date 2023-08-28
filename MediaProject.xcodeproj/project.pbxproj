@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DE118CC62A89266A00084A26 /* MovieStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE118CC52A89266A00084A26 /* MovieStruct.swift */; };
+		DE1468202A9C6CAC003B2BC8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14681F2A9C6CAC003B2BC8 /* BaseViewController.swift */; };
+		DE1468232A9C6CEE003B2BC8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE1468222A9C6CEE003B2BC8 /* SnapKit */; };
+		DE1468252A9C6E5D003B2BC8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1468242A9C6E5D003B2BC8 /* BaseView.swift */; };
+		DE1468272A9C6EE2003B2BC8 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1468262A9C6EE2003B2BC8 /* TrendView.swift */; };
+		DE1468292A9C76FB003B2BC8 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1468282A9C76FB003B2BC8 /* BaseTableViewCell.swift */; };
+		DE14682B2A9C77C2003B2BC8 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14682A2A9C77C2003B2BC8 /* MediaTableViewCell.swift */; };
 		DE28A36E2A8F9AD500CE4FB4 /* TVTrend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28A36D2A8F9AD500CE4FB4 /* TVTrend.swift */; };
 		DE28A3702A8F9C9700CE4FB4 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28A36F2A8F9C9700CE4FB4 /* Genres.swift */; };
 		DE28A3742A8FB6B400CE4FB4 /* TVDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28A3732A8FB6B400CE4FB4 /* TVDetails.swift */; };
@@ -46,6 +52,11 @@
 
 /* Begin PBXFileReference section */
 		DE118CC52A89266A00084A26 /* MovieStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStruct.swift; sourceTree = "<group>"; };
+		DE14681F2A9C6CAC003B2BC8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DE1468242A9C6E5D003B2BC8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		DE1468262A9C6EE2003B2BC8 /* TrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendView.swift; sourceTree = "<group>"; };
+		DE1468282A9C76FB003B2BC8 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		DE14682A2A9C77C2003B2BC8 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		DE28A36D2A8F9AD500CE4FB4 /* TVTrend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTrend.swift; sourceTree = "<group>"; };
 		DE28A36F2A8F9C9700CE4FB4 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		DE28A3732A8FB6B400CE4FB4 /* TVDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetails.swift; sourceTree = "<group>"; };
@@ -87,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE76F2BE2A864BDF001BFD2D /* Kingfisher in Frameworks */,
+				DE1468232A9C6CEE003B2BC8 /* SnapKit in Frameworks */,
 				DE76F2BB2A864BD6001BFD2D /* SwiftyJSON in Frameworks */,
 				DE76F2B82A864BCB001BFD2D /* Alamofire in Frameworks */,
 			);
@@ -113,6 +125,16 @@
 				DE28A3752A8FB7D400CE4FB4 /* TVSeasonsDetails.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		DE14681E2A9C6C97003B2BC8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DE14681F2A9C6CAC003B2BC8 /* BaseViewController.swift */,
+				DE1468242A9C6E5D003B2BC8 /* BaseView.swift */,
+				DE1468282A9C76FB003B2BC8 /* BaseTableViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		DE28A3772A8FBAB500CE4FB4 /* TVDetailView */ = {
@@ -146,6 +168,7 @@
 		DE80D2F32A861C0900CBAEA5 /* MediaProject */ = {
 			isa = PBXGroup;
 			children = (
+				DE14681E2A9C6C97003B2BC8 /* Base */,
 				DE80D2F42A861C0900CBAEA5 /* AppDelegate.swift */,
 				DE80D2F62A861C0900CBAEA5 /* SceneDelegate.swift */,
 				DE80D2FA2A861C0900CBAEA5 /* Main.storyboard */,
@@ -165,8 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				DE80D2F82A861C0900CBAEA5 /* TrendViewController.swift */,
+				DE1468262A9C6EE2003B2BC8 /* TrendView.swift */,
 				DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */,
 				DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */,
+				DE14682A2A9C77C2003B2BC8 /* MediaTableViewCell.swift */,
 			);
 			path = TrendView;
 			sourceTree = "<group>";
@@ -203,6 +228,7 @@
 				DE76F2B72A864BCB001BFD2D /* Alamofire */,
 				DE76F2BA2A864BD6001BFD2D /* SwiftyJSON */,
 				DE76F2BD2A864BDF001BFD2D /* Kingfisher */,
+				DE1468222A9C6CEE003B2BC8 /* SnapKit */,
 			);
 			productName = MediaProject;
 			productReference = DE80D2F12A861C0900CBAEA5 /* MediaProject.app */;
@@ -236,6 +262,7 @@
 				DE76F2B62A864BCB001BFD2D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DE76F2B92A864BD6001BFD2D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				DE76F2BC2A864BDF001BFD2D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				DE1468212A9C6CEE003B2BC8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DE80D2F22A861C0900CBAEA5 /* Products */;
 			projectDirPath = "";
@@ -270,17 +297,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1468272A9C6EE2003B2BC8 /* TrendView.swift in Sources */,
 				DE28A36E2A8F9AD500CE4FB4 /* TVTrend.swift in Sources */,
 				DEEF57F52A8A3D3E00FD4FAA /* OverviewTableViewCell.swift in Sources */,
 				DE28A3822A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.swift in Sources */,
+				DE1468292A9C76FB003B2BC8 /* BaseTableViewCell.swift in Sources */,
 				DE28A3742A8FB6B400CE4FB4 /* TVDetails.swift in Sources */,
 				DE80D2F92A861C0900CBAEA5 /* TrendViewController.swift in Sources */,
+				DE1468202A9C6CAC003B2BC8 /* BaseViewController.swift in Sources */,
 				DE28A37E2A8FBBB900CE4FB4 /* EpisodeCollectionViewCell.swift in Sources */,
 				DE76F2B52A8648B9001BFD2D /* Endpoint.swift in Sources */,
 				DE76F2B32A8646B5001BFD2D /* URL+Extension.swift in Sources */,
 				DEEF57F82A8A47CC00FD4FAA /* Credit.swift in Sources */,
 				DE118CC62A89266A00084A26 /* MovieStruct.swift in Sources */,
 				DE76F2A72A862DD2001BFD2D /* ReusableViewProtocol.swift in Sources */,
+				DE1468252A9C6E5D003B2BC8 /* BaseView.swift in Sources */,
 				DE80D2F52A861C0900CBAEA5 /* AppDelegate.swift in Sources */,
 				DE891CC72A8E455C00BBF0CB /* MovieTrend.swift in Sources */,
 				DE80D2F72A861C0900CBAEA5 /* SceneDelegate.swift in Sources */,
@@ -292,6 +323,7 @@
 				DE76F2AA2A8631A5001BFD2D /* ContentTableViewCell.swift in Sources */,
 				DE28A3762A8FB7D400CE4FB4 /* TVSeasonsDetails.swift in Sources */,
 				DEEF57EE2A8A37A800FD4FAA /* CreditViewController.swift in Sources */,
+				DE14682B2A9C77C2003B2BC8 /* MediaTableViewCell.swift in Sources */,
 				DECCE0F32A8BD3E300B38945 /* PersonCreditStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +475,6 @@
 				INFOPLIST_FILE = MediaProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -474,7 +505,6 @@
 				INFOPLIST_FILE = MediaProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -518,6 +548,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DE1468212A9C6CEE003B2BC8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		DE76F2B62A864BCB001BFD2D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -545,6 +583,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE1468222A9C6CEE003B2BC8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1468212A9C6CEE003B2BC8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		DE76F2B72A864BCB001BFD2D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE76F2B62A864BCB001BFD2D /* XCRemoteSwiftPackageReference "Alamofire" */;

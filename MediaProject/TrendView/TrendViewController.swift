@@ -8,10 +8,7 @@
 import UIKit
 import Kingfisher
 
-class TrendViewController: UIViewController {
-
-    @IBOutlet var trendTableView: UITableView!
-    @IBOutlet var segmentedControl: UISegmentedControl!
+class TrendViewController: BaseViewController {
     
     var movieList: [Movie] = []
     var movieGenres: [Int : String] = [:]
@@ -19,16 +16,15 @@ class TrendViewController: UIViewController {
     var tvList: TVTrend = TVTrend(page: 0, results: [], totalPages: 0, totalResults: 0)
     var tvGenres: [Int : String] = [:]
     
+    let mainView = TrendView()
+    
+    override func loadView() {
+        self.view = mainView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: ContentTableViewCell.identifier, bundle: nil)
-        trendTableView.register(nib, forCellReuseIdentifier: ContentTableViewCell.identifier)
-        
-        trendTableView.delegate = self
-        trendTableView.dataSource = self
-        
-        trendTableView.rowHeight = 450
         
         TMDBAPIManager.shared.callMovieListRequest { data in
             for genre in data.genres {
@@ -58,7 +54,7 @@ class TrendViewController: UIViewController {
 
             }
             // MARK: reload 어느 시점에?
-            self.trendTableView.reloadData()
+            self.mainView.tableView.reloadData()
         }
         
         TMDBAPIManager.shared.callTVListRequest { data in
@@ -69,18 +65,26 @@ class TrendViewController: UIViewController {
         
         TMDBAPIManager.shared.callTVRequest { data in
             self.tvList = data
-            self.trendTableView.reloadData()
+            self.mainView.tableView.reloadData()
         }
         
         
         
     }
     
+    override func configureView() {
+        super.configureView()
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+    }
+    
+    override func setConstraints() { }
+    
     
     @IBAction func segmentedControlSelected(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0, 1:
-            trendTableView.reloadData()
+            mainView.tableView.reloadData()
         default:
             print("error")
         }
@@ -91,7 +95,7 @@ class TrendViewController: UIViewController {
 extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch segmentedControl.selectedSegmentIndex {
+        switch mainView.mediaSegmentedControl.selectedSegmentIndex {
         case 0:
             return movieList.count
         case 1:
@@ -105,7 +109,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier) as? ContentTableViewCell else { return UITableViewCell()}
         
-        switch segmentedControl.selectedSegmentIndex {
+        switch mainView.mediaSegmentedControl.selectedSegmentIndex {
         case 0:
             cell.titleLabel.text = movieList[indexPath.row].title
             cell.dateLabel.text = movieList[indexPath.row].releaseDate
@@ -134,25 +138,25 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if segmentedControl.selectedSegmentIndex == 0 {
-            transitionMovieView(rowIndex: indexPath.row)
-        } else {
-            transitionTVView(rowIndex: indexPath.row)
-        }
-        
-    }
-    
-    func transitionMovieView(rowIndex: Int) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
-        vc.movieInfo = movieList[rowIndex]
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func transitionTVView(rowIndex: Int) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: TVDetailsViewController.identifier) as? TVDetailsViewController else { return }
-        vc.seriesID = tvList.results[rowIndex].id
-        navigationController?.pushViewController(vc, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if mainView.mediaSegmentedControl.selectedSegmentIndex == 0 {
+//            transitionMovieView(rowIndex: indexPath.row)
+//        } else {
+//            transitionTVView(rowIndex: indexPath.row)
+//        }
+//        
+//    }
+//    
+//    func transitionMovieView(rowIndex: Int) {
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        guard let vc = sb.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
+//        vc.movieInfo = movieList[rowIndex]
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+//    
+//    func transitionTVView(rowIndex: Int) {
+//        guard let vc = storyboard?.instantiateViewController(withIdentifier: TVDetailsViewController.identifier) as? TVDetailsViewController else { return }
+//        vc.seriesID = tvList.results[rowIndex].id
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
 }
