@@ -142,9 +142,9 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if mainView.mediaSegmentedControl.selectedSegmentIndex == 0 {
             transitionMovieView(rowIndex: indexPath.row)
-        } //else {
-            //transitionTVView(rowIndex: indexPath.row)
-        //}
+        } else {
+            transitionTVView(rowIndex: indexPath.row)
+        }
         
     }
     
@@ -155,7 +155,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func transitionTVView(rowIndex: Int) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: TVDetailsViewController.identifier) as? TVDetailsViewController else { return }
+        let vc = TVDetailsViewController()
         vc.seriesID = tvList.results[rowIndex].id
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -7,25 +7,26 @@
 
 import UIKit
 
-class TVDetailsViewController: UIViewController {
+class TVDetailsViewController: BaseViewController {
     
     var seriesID: Int = 0
     var seasonInfo: [Season] = []
     var epiInfo: [TVSeasonsDetails] = []
-
-    @IBOutlet var episodeCollectionView: UICollectionView!
     
     let group = DispatchGroup()
+    
+    let mainView = TVDetailView()
+    
+    override func loadView() {
+        self.view = mainView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureCollectionView()
-        configureCollectionViewLayout()
-        print(seriesID)
         TMDBAPIManager.shared.callSeasonInfoRequest(seriesID: seriesID) { data in
             self.seasonInfo = data.seasons
-            self.episodeCollectionView.reloadData()
+            self.mainView.collectionView.reloadData()
 
             for season in self.seasonInfo {
                 
@@ -37,11 +38,17 @@ class TVDetailsViewController: UIViewController {
             }
             self.group.notify(queue: .main) {
                 print("=====END====")
-                self.episodeCollectionView.reloadData()
+                self.mainView.collectionView.reloadData()
             }
             
         }
         
+    }
+    
+    override func configureView() {
+        super.configureView()
+        mainView.collectionView.delegate = self
+        mainView.collectionView.dataSource = self
     }
 
 }
@@ -68,7 +75,7 @@ extension TVDetailsViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if epiInfo.count > 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCollectionViewCell.identifier, for: indexPath) as? EpisodeCollectionViewCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpiCollectionViewCell.identifier, for: indexPath) as? EpiCollectionViewCell else { return UICollectionViewCell() }
 
             if let epiURL = epiInfo[indexPath.section].episodes[indexPath.row].stillPath {
                 let url = URL(string: "https://image.tmdb.org/t/p/original" + epiURL)
@@ -93,11 +100,11 @@ extension TVDetailsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         if kind == UICollectionView.elementKindSectionHeader {
             
-            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSeasonCollectionReusableView.identifier, for: indexPath) as? HeaderSeasonCollectionReusableView else { return UICollectionReusableView() }
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SeasonCollectionReusableView.identifier, for: indexPath) as? SeasonCollectionReusableView else { return UICollectionReusableView() }
             
             let seasonURL = seasonInfo[indexPath.section].posterPath
             let url = URL(string: "https://image.tmdb.org/t/p/original" + seasonURL)
-            view.seasonBackDropImageView.kf.setImage(with: url)
+            view.seasonBackdropImageView.kf.setImage(with: url)
             view.seasonTitleLabel.text = seasonInfo[indexPath.section].name
             view.seasonOverviewLabel.text = seasonInfo[indexPath.section].overview
             
@@ -111,30 +118,3 @@ extension TVDetailsViewController: UICollectionViewDelegate, UICollectionViewDat
     
 }
 
-extension TVDetailsViewController {
-    func configureCollectionView() {
-        episodeCollectionView.delegate = self
-        episodeCollectionView.dataSource = self
-        
-        episodeCollectionView.register(UINib(nibName: EpisodeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: EpisodeCollectionViewCell.identifier)
-        episodeCollectionView.register(UINib(nibName: HeaderSeasonCollectionReusableView.identifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderSeasonCollectionReusableView.identifier)
-        
-    }
-    
-    func configureCollectionViewLayout() {
-        
-        let layout = UICollectionViewFlowLayout()
-        
-        let spacing: CGFloat = 12
-        let width = UIScreen.main.bounds.width - (spacing * 4)
-        layout.itemSize = CGSize(width: width / 3, height: width / 3)
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-        layout.scrollDirection = .vertical
-        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
-        
-        episodeCollectionView.collectionViewLayout = layout
-        
-    }
-}

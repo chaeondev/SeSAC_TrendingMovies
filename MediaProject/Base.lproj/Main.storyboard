@@ -210,9 +210,6 @@
                             <constraint firstItem="nsa-OH-nPE" firstAttribute="leading" secondItem="kzW-og-Qd8" secondAttribute="leading" id="dg4-gU-Dz0"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="episodeCollectionView" destination="nsa-OH-nPE" id="IP4-Q6-umz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4z-Wg-bWF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
