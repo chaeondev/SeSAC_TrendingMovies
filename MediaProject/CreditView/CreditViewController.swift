@@ -11,38 +11,43 @@ import Kingfisher
 
 
 
-class CreditViewController: UIViewController, DownBtnClicked {
-    
-    
-
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var movieTitleLabel: UILabel!
-    @IBOutlet var posterImageView: UIImageView!
-    @IBOutlet var backDropImageView: UIImageView!
-    @IBOutlet var blackView: UIView!
-    
+class CreditViewController: BaseViewController, DownBtnClicked {
     
     var castList: [PersonCredit] = []
     var movieInfo: Movie?
     var expand: Bool = false
     
+    let mainView = CreditView()
+    
+    override func loadView() {
+        self.view = mainView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nib1 = UINib(nibName: OverviewTableViewCell.identifier, bundle: nil)
-        tableView.register(nib1, forCellReuseIdentifier: OverviewTableViewCell.identifier)
-        
-        let nib2 = UINib(nibName: CastTableViewCell.identifier, bundle: nil)
-        tableView.register(nib2, forCellReuseIdentifier: CastTableViewCell.identifier)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = 100
-        
-        configureView()
         callRequest()
         
     }
+    
+    override func configureView() {
+        super.configureView()
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+        
+        guard let movieInfo else { return }
+        
+        mainView.movieTitleLabel.text = movieInfo.title
+        if let posterUrl = URL(string: "https://image.tmdb.org/t/p/original" + movieInfo.poster) {
+            mainView.posterImageView.kf.setImage(with: posterUrl)
+        }
+        if let backUrl = URL(string: "https://image.tmdb.org/t/p/original" + movieInfo.backdrop) {
+            mainView.backdropImageView.kf.setImage(with: backUrl)
+        }
+    }
+    
+    override func setConstraints() { }
+    
     
     func callRequest() {
         let header: HTTPHeaders = [
@@ -58,31 +63,11 @@ class CreditViewController: UIViewController, DownBtnClicked {
                       let profilePath = person.profilePath else { return }
                 let data = PersonCredit(realName: realName, castName: castName, profilePath: profilePath)
                 self.castList.append(data)
-                self.tableView.reloadData()
+                self.mainView.tableView.reloadData()
             }
         }
     }
     
-    func configureView() {
-        guard let movieInfo else { return }
-        
-        movieTitleLabel.text = movieInfo.title
-        movieTitleLabel.font = .boldSystemFont(ofSize: 18)
-        movieTitleLabel.textColor = .white
-        
-        if let posterUrl = URL(string: "https://image.tmdb.org/t/p/original" + movieInfo.poster) {
-            posterImageView.kf.setImage(with: posterUrl)
-        }
-        
-        if let backUrl = URL(string: "https://image.tmdb.org/t/p/original" + movieInfo.backdrop) {
-            backDropImageView.kf.setImage(with: backUrl)
-        }
-        backDropImageView.contentMode = .scaleAspectFill
-        
-        blackView.backgroundColor = .black.withAlphaComponent(0.6)
-        
-    }
-
 }
 
 extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
@@ -109,13 +94,13 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as? OverviewTableViewCell else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: StoryTableViewCell.identifier) as? StoryTableViewCell else { return UITableViewCell()}
             cell.overviewLabel.text = movieInfo?.overview
             cell.myDelegate = self
             
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastInfoTableViewCell.identifier) as? CastInfoTableViewCell else { return UITableViewCell()}
             cell.realNameLabel.text = castList[indexPath.row].realName
             cell.roleNameLabel.text = castList[indexPath.row].castName
             cell.personImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + castList[indexPath.row].profilePath))
@@ -126,7 +111,7 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func onDownBtnClicked() {
-        tableView.reloadData()
+        mainView.tableView.reloadData()
     }
     
 }

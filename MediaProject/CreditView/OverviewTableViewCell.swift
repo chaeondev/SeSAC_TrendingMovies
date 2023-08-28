@@ -41,6 +41,3 @@ class OverviewTableViewCell: UITableViewCell {
     
 }
 
-protocol DownBtnClicked {
-     func onDownBtnClicked()
-}

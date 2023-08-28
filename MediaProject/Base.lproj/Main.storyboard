@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Trend View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="TrendViewController" id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrendViewController" id="BYZ-38-t0r" customClass="TrendViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVg-Gp-gOs">
-                                <rect key="frame" x="0.0" y="59" width="393" height="59.666666666666657"/>
+                                <rect key="frame" x="0.0" y="103.00000000000001" width="393" height="59.666666666666671"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-yG-Ggx">
                                         <rect key="frame" x="276" y="8" width="105" height="43.666666666666664"/>
@@ -47,7 +47,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XPm-z3-UtH">
-                                <rect key="frame" x="0.0" y="118.66666666666669" width="393" height="699.33333333333326"/>
+                                <rect key="frame" x="0.0" y="162.66666666666669" width="393" height="606.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentTableViewCell" id="dty-SX-myX">
@@ -75,6 +75,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gf5-5d-KvU"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="u7Q-gc-qrq" id="pTM-E5-oPd"/>
+                        <outlet property="trendTableView" destination="XPm-z3-UtH" id="mjT-Ro-cXp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="1935" y="649"/>
         </scene>
-        <!--Credit View Controller-->
+        <!--View Controller-->
         <scene sceneID="MfJ-Bz-Wds">
             <objects>
-                <viewController storyboardIdentifier="CreditViewController" id="6xB-2w-JRM" customClass="CreditViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6xB-2w-JRM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ljw-gT-4kW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,13 +167,6 @@
                             <constraint firstItem="6xj-ay-xZu" firstAttribute="trailing" secondItem="vdM-Qs-1k7" secondAttribute="trailing" id="xJu-Ej-xAt"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="backDropImageView" destination="29B-h2-6gB" id="yW5-sp-35j"/>
-                        <outlet property="blackView" destination="6xj-ay-xZu" id="Tjt-ZT-fow"/>
-                        <outlet property="movieTitleLabel" destination="8KZ-Mo-nUc" id="LmO-8y-uck"/>
-                        <outlet property="posterImageView" destination="Xb5-9u-zSD" id="3Rh-Tv-9n3"/>
-                        <outlet property="tableView" destination="cAa-iy-MOz" id="6c4-aH-een"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jA-Hh-pcU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,6 +229,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tPD-gi-U34"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08n-Kc-V1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

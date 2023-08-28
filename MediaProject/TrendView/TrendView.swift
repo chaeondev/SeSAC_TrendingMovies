@@ -14,16 +14,16 @@ class TrendView: BaseView {
         return view
     }()
     let mediaSegmentedControl = {
-        let view = UISegmentedControl()
-        view.setTitle("Movie", forSegmentAt: 0)
-        view.setTitle("TV", forSegmentAt: 1)
+        let view = UISegmentedControl(items: ["Movie", "TV"])
+        view.selectedSegmentIndex = 0
         return view
     }()
     let periodButton = {
         let view = UIButton()
-        view.setTitle("Day", for: .normal)
         view.setImage(UIImage(systemName: "arrow.up.arrow.down"), for: .normal)
-        view.titleLabel?.font = .boldSystemFont(ofSize: 11)
+        view.setTitle("Day", for: .normal)
+        view.setTitleColor(.black, for: .normal)
+        view.titleLabel?.font = .boldSystemFont(ofSize: 13)
         view.tintColor = .black
         return view
     }()
@@ -38,9 +38,31 @@ class TrendView: BaseView {
     
     override func configureView() {
         
+        addSubview(topView)
+        topView.addSubview(mediaSegmentedControl)
+        topView.addSubview(periodButton)
+        addSubview(tableView)
+        
     }
     
     override func setConstraints() {
+        
+        topView.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            make.height.equalToSuperview().multipliedBy(0.07)
+        }
+        mediaSegmentedControl.snp.makeConstraints { make in
+            make.leadingMargin.equalToSuperview().inset(12)
+            make.centerY.equalToSuperview()
+        }
+        periodButton.snp.makeConstraints { make in
+            make.verticalEdges.equalToSuperview()
+            make.trailingMargin.equalToSuperview().inset(12)
+        }
+        tableView.snp.makeConstraints { make in
+            make.bottom.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            make.top.equalTo(topView.snp.bottom)
+        }
         
     }
     

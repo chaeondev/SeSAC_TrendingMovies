@@ -23,6 +23,7 @@ class MediaTableViewCell: BaseTableViewCell {
     }()
     let shadowView = {
         let view = UIView()
+        view.backgroundColor = .white
         view.layer.cornerRadius = 10
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOffset = .zero
@@ -62,10 +63,10 @@ class MediaTableViewCell: BaseTableViewCell {
     }()
     
     override func configureView() {
-        addSubview(dateLabel)
-        addSubview(genreLabel)
-        addSubview(shadowView)
-        addSubview(contentBackgroundView)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(genreLabel)
+        contentView.addSubview(shadowView)
+        contentView.addSubview(contentBackgroundView)
         contentBackgroundView.addSubview(backdropImageView)
         contentBackgroundView.addSubview(titleLabel)
         contentBackgroundView.addSubview(storyLabel)
@@ -75,26 +76,26 @@ class MediaTableViewCell: BaseTableViewCell {
     override func setConstraints() {
         
         dateLabel.snp.makeConstraints { make in
-            make.topMargin.leadingMargin.equalToSuperview().inset(8)
+            make.topMargin.leading.equalToSuperview().offset(12)
             make.width.greaterThanOrEqualTo(60)
             make.height.equalToSuperview().multipliedBy(0.04)
         }
         
         genreLabel.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(6)
-            make.leadingMargin.equalToSuperview().inset(8)
+            make.leading.equalToSuperview().offset(12)
             make.width.greaterThanOrEqualTo(70)
             make.height.equalToSuperview().multipliedBy(0.05)
         }
         
         shadowView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(8)
+            make.horizontalEdges.equalToSuperview().inset(12)
             make.top.equalTo(genreLabel.snp.bottom).offset(8)
             make.width.equalTo(self.shadowView.snp.height).multipliedBy(1)
         }
         
         contentBackgroundView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(8)
+            make.horizontalEdges.equalToSuperview().inset(12)
             make.top.equalTo(genreLabel.snp.bottom).offset(8)
             make.width.equalTo(self.contentBackgroundView.snp.height).multipliedBy(1)
         }

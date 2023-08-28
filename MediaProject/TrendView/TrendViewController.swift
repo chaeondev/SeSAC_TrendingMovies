@@ -76,12 +76,13 @@ class TrendViewController: BaseViewController {
         super.configureView()
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+        
+        mainView.mediaSegmentedControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
     }
     
     override func setConstraints() { }
     
-    
-    @IBAction func segmentedControlSelected(_ sender: UISegmentedControl) {
+    @objc func segmentedValueChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0, 1:
             mainView.tableView.reloadData()
@@ -107,7 +108,7 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier) as? ContentTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.identifier) as? MediaTableViewCell else { return UITableViewCell()}
         
         switch mainView.mediaSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -138,25 +139,24 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if mainView.mediaSegmentedControl.selectedSegmentIndex == 0 {
-//            transitionMovieView(rowIndex: indexPath.row)
-//        } else {
-//            transitionTVView(rowIndex: indexPath.row)
-//        }
-//        
-//    }
-//    
-//    func transitionMovieView(rowIndex: Int) {
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        guard let vc = sb.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
-//        vc.movieInfo = movieList[rowIndex]
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
-//    
-//    func transitionTVView(rowIndex: Int) {
-//        guard let vc = storyboard?.instantiateViewController(withIdentifier: TVDetailsViewController.identifier) as? TVDetailsViewController else { return }
-//        vc.seriesID = tvList.results[rowIndex].id
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if mainView.mediaSegmentedControl.selectedSegmentIndex == 0 {
+            transitionMovieView(rowIndex: indexPath.row)
+        } //else {
+            //transitionTVView(rowIndex: indexPath.row)
+        //}
+        
+    }
+    
+    func transitionMovieView(rowIndex: Int) {
+        let vc = CreditViewController()
+        vc.movieInfo = movieList[rowIndex]
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func transitionTVView(rowIndex: Int) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: TVDetailsViewController.identifier) as? TVDetailsViewController else { return }
+        vc.seriesID = tvList.results[rowIndex].id
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
