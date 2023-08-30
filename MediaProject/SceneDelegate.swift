@@ -20,10 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabbar = UITabBarController()
         
         let firstVC = UINavigationController(rootViewController: TrendViewController())
+        let secondVC = UINavigationController(rootViewController: ProfileViewController())
         
         firstVC.tabBarItem = UITabBarItem(title: "Trends", image: UIImage(systemName: "books.vertical"), selectedImage: UIImage(systemName: "books.vertical.fill"))
+        secondVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), selectedImage: UIImage(systemName: "person.crop.circle.fill"))
         
-        tabbar.viewControllers = [firstVC]
+        tabbar.viewControllers = [firstVC, secondVC]
         
         window?.rootViewController = tabbar
         window?.makeKeyAndVisible()

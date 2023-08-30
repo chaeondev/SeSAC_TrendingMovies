@@ -54,11 +54,12 @@ class SeasonCollectionReusableView: BaseCollectionReusableView {
             make.leading.equalTo(seasonBackdropImageView.snp.trailing).offset(16)
             make.top.equalToSuperview().offset(12)
             make.trailing.greaterThanOrEqualToSuperview().inset(16)
+            make.height.equalTo(30)
         }
         seasonOverviewLabel.snp.makeConstraints { make in
             make.leading.equalTo(seasonBackdropImageView.snp.trailing).offset(16)
             make.trailing.equalToSuperview().inset(16)
-            make.top.equalTo(seasonTitleLabel.snp.bottom).offset(12)
+            make.top.equalTo(seasonTitleLabel.snp.bottom)
             make.bottom.equalToSuperview().inset(12)
         }
         

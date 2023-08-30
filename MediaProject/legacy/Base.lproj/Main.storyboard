@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="2860" y="-35"/>
         </scene>
-        <!--Details View Controller-->
+        <!--View Controller-->
         <scene sceneID="iFe-90-rkE">
             <objects>
-                <viewController storyboardIdentifier="TVDetailsViewController" id="BmD-x1-LTU" customClass="TVDetailsViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BmD-x1-LTU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cia-6Q-cO2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
