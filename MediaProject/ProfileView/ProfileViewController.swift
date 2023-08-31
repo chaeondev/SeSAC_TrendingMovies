@@ -45,5 +45,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if ["Name", "Username", "Bio"].contains(settingList[indexPath.row]) {
+            let vc = EditViewController()
+            vc.typeLabel.text = settingList[indexPath.row]
+            vc.textField.placeholder = "Add your \(settingList[indexPath.row])"
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     
 }

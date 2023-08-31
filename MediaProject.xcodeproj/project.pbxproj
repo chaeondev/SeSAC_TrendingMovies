@@ -34,6 +34,7 @@
 		DE28A37F2A8FBBB900CE4FB4 /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE28A37D2A8FBBB900CE4FB4 /* EpisodeCollectionViewCell.xib */; };
 		DE28A3822A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28A3802A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.swift */; };
 		DE28A3832A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE28A3812A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.xib */; };
+		DE2C139F2AA3916900CFC1BB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C139E2AA3916900CFC1BB /* EditViewController.swift */; };
 		DE76F2A72A862DD2001BFD2D /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */; };
 		DE76F2AA2A8631A5001BFD2D /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */; };
 		DE76F2AB2A8631A5001BFD2D /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */; };
@@ -88,6 +89,7 @@
 		DE28A37D2A8FBBB900CE4FB4 /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE28A3802A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSeasonCollectionReusableView.swift; sourceTree = "<group>"; };
 		DE28A3812A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSeasonCollectionReusableView.xib; sourceTree = "<group>"; };
+		DE2C139E2AA3916900CFC1BB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				DE21482E2A9DE74C005A2D4E /* ProfileViewController.swift */,
 				DE2148302A9DE83C005A2D4E /* ProfileView.swift */,
 				DE2148322A9DE8E6005A2D4E /* SettingTableViewCell.swift */,
+				DE2C139E2AA3916900CFC1BB /* EditViewController.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				DE2148332A9DE8E6005A2D4E /* SettingTableViewCell.swift in Sources */,
 				DEEF57F52A8A3D3E00FD4FAA /* OverviewTableViewCell.swift in Sources */,
 				DE28A3822A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.swift in Sources */,
+				DE2C139F2AA3916900CFC1BB /* EditViewController.swift in Sources */,
 				DE1468292A9C76FB003B2BC8 /* BaseTableViewCell.swift in Sources */,
 				DE28A3742A8FB6B400CE4FB4 /* TVDetails.swift in Sources */,
 				DE80D2F92A861C0900CBAEA5 /* TrendViewController.swift in Sources */,
