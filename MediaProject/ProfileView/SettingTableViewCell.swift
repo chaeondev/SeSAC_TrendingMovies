@@ -53,10 +53,10 @@ class SettingTableViewCell: BaseTableViewCell {
         }
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        detailLabel.text = ""
-//    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        detailLabel.text = ""
+    }
     
 }
 
