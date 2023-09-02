@@ -51,8 +51,13 @@ class SettingTableViewCell: BaseTableViewCell {
             make.trailing.verticalEdges.equalToSuperview().inset(15)
             make.width.equalTo(15)
         }
-        
-        
     }
     
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        detailLabel.text = ""
+//    }
+    
 }
+
+

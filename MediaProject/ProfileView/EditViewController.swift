@@ -34,10 +34,21 @@ class EditViewController: BaseViewController {
         return view
     }()
     
+    weak var delegate: PassDataDelegate?
     
+    var row: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if let text = textField.text, let row = row {
+            delegate?.receiveData(text: text, row: row)
+        }
+        
         
     }
     
@@ -52,6 +63,9 @@ class EditViewController: BaseViewController {
     }
     
     @objc func doneButtonClicked() {
+        if let text = textField.text, let row = row {
+            delegate?.receiveData(text: text, row: row)
+        }
         navigationController?.popViewController(animated: true)
     }
     
