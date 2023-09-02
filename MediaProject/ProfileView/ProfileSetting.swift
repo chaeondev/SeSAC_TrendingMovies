@@ -32,3 +32,10 @@ struct SettingList {
     ]
 }
 
+enum Gender: String, CaseIterable {
+    case male = "Male"
+    case female = "Female"
+    case custom = "Custom"
+    case preferNotToSay = "Prefer Not to Say"
+}
+

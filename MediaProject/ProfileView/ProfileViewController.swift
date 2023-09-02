@@ -59,7 +59,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if ["Name", "Username", "Bio"].contains(settingList[indexPath.row].title) {
+        if settingList[indexPath.row].title == "Gender" {
+            let vc = GenderViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
             let vc = EditViewController()
             vc.delegate = self
             vc.index = indexPath

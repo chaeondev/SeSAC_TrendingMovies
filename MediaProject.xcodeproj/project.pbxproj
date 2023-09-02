@@ -36,6 +36,7 @@
 		DE28A3832A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE28A3812A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.xib */; };
 		DE2C139F2AA3916900CFC1BB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C139E2AA3916900CFC1BB /* EditViewController.swift */; };
 		DE2C13A32AA3EB3900CFC1BB /* ProfileSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C13A22AA3EB3900CFC1BB /* ProfileSetting.swift */; };
+		DE2C13A52AA3F9B100CFC1BB /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C13A42AA3F9B100CFC1BB /* GenderViewController.swift */; };
 		DE76F2A72A862DD2001BFD2D /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */; };
 		DE76F2AA2A8631A5001BFD2D /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */; };
 		DE76F2AB2A8631A5001BFD2D /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */; };
@@ -92,6 +93,7 @@
 		DE28A3812A8FBCCB00CE4FB4 /* HeaderSeasonCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSeasonCollectionReusableView.xib; sourceTree = "<group>"; };
 		DE2C139E2AA3916900CFC1BB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		DE2C13A22AA3EB3900CFC1BB /* ProfileSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetting.swift; sourceTree = "<group>"; };
+		DE2C13A42AA3F9B100CFC1BB /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		DE76F2A62A862DD2001BFD2D /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		DE76F2A82A8631A5001BFD2D /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		DE76F2A92A8631A5001BFD2D /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				DE2148322A9DE8E6005A2D4E /* SettingTableViewCell.swift */,
 				DE2C139E2AA3916900CFC1BB /* EditViewController.swift */,
 				DE2C13A22AA3EB3900CFC1BB /* ProfileSetting.swift */,
+				DE2C13A42AA3F9B100CFC1BB /* GenderViewController.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				DE28A3702A8F9C9700CE4FB4 /* Genres.swift in Sources */,
 				DE76F2AF2A864561001BFD2D /* APIKey.swift in Sources */,
 				DE2C13A32AA3EB3900CFC1BB /* ProfileSetting.swift in Sources */,
+				DE2C13A52AA3F9B100CFC1BB /* GenderViewController.swift in Sources */,
 				DEEF57F12A8A3D2200FD4FAA /* CastTableViewCell.swift in Sources */,
 				DE28A3792A8FBADD00CE4FB4 /* TVDetailsViewController.swift in Sources */,
 				DE1468402A9CC2C4003B2BC8 /* SeasonCollectionReusableView.swift in Sources */,

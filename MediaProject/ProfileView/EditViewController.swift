@@ -19,14 +19,12 @@ class EditViewController: BaseViewController {
     let typeLabel = {
         let view = UILabel()
         view.textColor = .darkGray
-        view.text = "dddddd"
         view.font = .systemFont(ofSize: 12, weight: .semibold)
         return view
     }()
     
     let textField = {
         let view = UITextField()
-        view.backgroundColor = .white
         view.textColor = .black
         view.font = .boldSystemFont(ofSize: 14)
         view.borderStyle = .none
